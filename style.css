@@ -1,3 +1,65 @@
+/* 申し込みボタン */
+.apply-btn {
+  background: linear-gradient(90deg, #43cea2 0%, #185a9d 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7em 2em;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 1em 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: background 0.3s;
+}
+.apply-btn:hover {
+  background: linear-gradient(90deg, #185a9d 0%, #43cea2 100%);
+}
+
+/* モーダル */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.3);
+}
+.modal-content {
+  background: #fff;
+  margin: 8% auto;
+  padding: 2em 2em 1em 2em;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+  position: relative;
+  text-align: left;
+}
+.modal-content h3 {
+  margin-top: 0;
+  color: #185a9d;
+}
+.modal-content label {
+  font-size: 1em;
+  color: #185a9d;
+}
+.modal-content input, .modal-content textarea {
+  width: 100%;
+  padding: 0.5em;
+  margin-top: 0.2em;
+  border: 1px solid #b2dfdb;
+  border-radius: 6px;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+.close {
+  position: absolute;
+  top: 0.7em;
+  right: 1em;
+  font-size: 2em;
+  color: #185a9d;
+  cursor: pointer;
+}
 /* 左寄せ */
 h2 {
   text-align: left;

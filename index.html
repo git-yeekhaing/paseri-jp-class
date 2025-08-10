@@ -34,6 +34,32 @@
       <h2>📢 お知らせ</h2>
       <p style="text-align:left;"><strong>Opening Date:</strong> <strong style="color:#0074D9; font-size: 20px;"> 10月4日（土）AM 10:00 ～ 12:00</strong> です。</p>
       <p style="font-size:1.1em; margin-top:1em; color:#2e8b57;">みなさんのご参加をお待ちしています！</p>
+      <button id="applyBtn" class="apply-btn">申し込み</button>
+      <div id="modal" class="modal">
+        <div class="modal-content">
+          <span class="close" id="closeModal">&times;</span>
+          <h3>申し込みフォーム</h3>
+          <form id="applyForm">
+            <label>お名前（Name）:<br><input type="text" name="name" required></label><br><br>
+            <label>国籍（Nationality）:<br>
+              <select name="nationality" required>
+                <option value="">選択してください / Please select</option>
+                <option value="日本">日本 / Japan</option>
+                <option value="中国">中国 / China</option>
+                <option value="韓国">韓国 / Korea</option>
+                <option value="ベトナム">ベトナム / Vietnam</option>
+                <option value="ネパール">ネパール / Nepal</option>
+                <option value="アメリカ">アメリカ / USA</option>
+                <option value="アメリカ">ミャンマー /Myanmar</option>
+                <option value="その他">その他 / Other</option>
+              </select>
+            </label><br><br>
+            <label>メールアドレス（Email）:<br><input type="email" name="email" required></label><br><br>
+            <label>メッセージ（Message）:<br><textarea name="message" rows="3"></textarea></label><br><br>
+            <button type="submit" class="apply-btn">送信</button>
+          </form>
+        </div>
+      </div>
     </section>
 
     <section>
@@ -56,5 +82,27 @@
   <footer>
     <p>&copy; 2025 パセリ | 日本語ボランティアグループ</p>
   </footer>
+  <script>
+    // モーダル表示
+    const applyBtn = document.getElementById('applyBtn');
+    const modal = document.getElementById('modal');
+    const closeModal = document.getElementById('closeModal');
+    applyBtn.onclick = () => { modal.style.display = 'block'; };
+    closeModal.onclick = () => { modal.style.display = 'none'; };
+    window.onclick = (e) => { if (e.target === modal) modal.style.display = 'none'; };
+
+    // メール送信
+    document.getElementById('applyForm').onsubmit = function(e) {
+      e.preventDefault();
+      const name = this.name.value;
+      const nationality = this.nationality.value;
+      const email = this.email.value;
+      const message = this.message.value;
+      const subject = encodeURIComponent('パセリクラス申し込み');
+      const body = encodeURIComponent(`お名前: ${name}\n国籍: ${nationality}\nメール: ${email}\nメッセージ: ${message}`);
+      window.location.href = `mailto:paseri.japanese@gmail.com?subject=${subject}&body=${body}`;
+      modal.style.display = 'none';
+    };
+  </script>
 </body>
 </html>
