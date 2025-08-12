@@ -1,3 +1,8 @@
+/* ラベル幅を統一 */
+.label-size {
+  min-width: 8.5em;
+  display: inline-block;
+}
 /* ルビ（ふりがな）のサイズを大きく */
 ruby rt {
   font-size: 10px;
