@@ -1,3 +1,9 @@
+/* ルビ（ふりがな）のサイズを大きく */
+ruby rt {
+  font-size: 10px;
+  color: #185a9d;
+  font-weight: bold;
+}
 /* 申し込みボタン */
 .apply-btn {
   background: linear-gradient(90deg, #43cea2 0%, #185a9d 100%);
